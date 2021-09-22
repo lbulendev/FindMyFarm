@@ -1,0 +1,658 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A435335526F58BE600DC2680 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A435335426F58BE600DC2680 /* MainViewController.swift */; };
+		A435335726F58C3600DC2680 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A435335626F58C3600DC2680 /* MapViewController.swift */; };
+		A43DAC9D26EC7D1000C3583C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43DAC9C26EC7D1000C3583C /* AppDelegate.swift */; };
+		A43DAC9F26EC7D1000C3583C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43DAC9E26EC7D1000C3583C /* SceneDelegate.swift */; };
+		A43DACA626EC7D1100C3583C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A43DACA526EC7D1100C3583C /* Assets.xcassets */; };
+		A43DACA926EC7D1100C3583C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A43DACA726EC7D1100C3583C /* LaunchScreen.storyboard */; };
+		A43DACB426EC7D1100C3583C /* FindMyFarmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43DACB326EC7D1100C3583C /* FindMyFarmTests.swift */; };
+		A43DACBF26EC7D1100C3583C /* FindMyFarmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43DACBE26EC7D1100C3583C /* FindMyFarmUITests.swift */; };
+		A43DACD226EC90A500C3583C /* RouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43DACD126EC90A500C3583C /* RouteBuilder.swift */; };
+		A43DACD426EC90CD00C3583C /* FarmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43DACD326EC90CD00C3583C /* FarmModel.swift */; };
+		A43DACD626EC90E300C3583C /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43DACD526EC90E300C3583C /* Route.swift */; };
+		A43DACD826EC911000C3583C /* RouteAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43DACD726EC911000C3583C /* RouteAnnotation.swift */; };
+		A450FAB126F435ED00385B70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A450FAB026F435ED00385B70 /* Main.storyboard */; };
+		A450FAEF26F4433000385B70 /* CarPlaySceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A450FAEE26F4433000385B70 /* CarPlaySceneDelegate.swift */; };
+		A4C64EF526ED16FC008FCB6D /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C64EF426ED16FC008FCB6D /* HomeKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A43DACB026EC7D1100C3583C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A43DAC9126EC7D1000C3583C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A43DAC9826EC7D1000C3583C;
+			remoteInfo = FindMyFarm;
+		};
+		A43DACBB26EC7D1100C3583C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A43DAC9126EC7D1000C3583C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A43DAC9826EC7D1000C3583C;
+			remoteInfo = FindMyFarm;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A435335426F58BE600DC2680 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		A435335626F58C3600DC2680 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		A43DAC9926EC7D1000C3583C /* FindMyFarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindMyFarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A43DAC9C26EC7D1000C3583C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A43DAC9E26EC7D1000C3583C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A43DACA526EC7D1100C3583C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A43DACA826EC7D1100C3583C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A43DACAA26EC7D1100C3583C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A43DACAF26EC7D1100C3583C /* FindMyFarmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindMyFarmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A43DACB326EC7D1100C3583C /* FindMyFarmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMyFarmTests.swift; sourceTree = "<group>"; };
+		A43DACB526EC7D1100C3583C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A43DACBA26EC7D1100C3583C /* FindMyFarmUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindMyFarmUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A43DACBE26EC7D1100C3583C /* FindMyFarmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMyFarmUITests.swift; sourceTree = "<group>"; };
+		A43DACC026EC7D1100C3583C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A43DACD126EC90A500C3583C /* RouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteBuilder.swift; sourceTree = "<group>"; };
+		A43DACD326EC90CD00C3583C /* FarmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarmModel.swift; sourceTree = "<group>"; };
+		A43DACD526EC90E300C3583C /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		A43DACD726EC911000C3583C /* RouteAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteAnnotation.swift; sourceTree = "<group>"; };
+		A450FAB026F435ED00385B70 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		A450FAEE26F4433000385B70 /* CarPlaySceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlaySceneDelegate.swift; sourceTree = "<group>"; };
+		A4C64EF226ED16FC008FCB6D /* FindMyFarm.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FindMyFarm.entitlements; sourceTree = "<group>"; };
+		A4C64EF426ED16FC008FCB6D /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A43DAC9626EC7D1000C3583C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4C64EF526ED16FC008FCB6D /* HomeKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A43DACAC26EC7D1100C3583C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A43DACB726EC7D1100C3583C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A43DAC9026EC7D1000C3583C = {
+			isa = PBXGroup;
+			children = (
+				A43DAC9B26EC7D1000C3583C /* FindMyFarm */,
+				A43DACB226EC7D1100C3583C /* FindMyFarmTests */,
+				A43DACBD26EC7D1100C3583C /* FindMyFarmUITests */,
+				A43DAC9A26EC7D1000C3583C /* Products */,
+				A4C64EF326ED16FC008FCB6D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A43DAC9A26EC7D1000C3583C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A43DAC9926EC7D1000C3583C /* FindMyFarm.app */,
+				A43DACAF26EC7D1100C3583C /* FindMyFarmTests.xctest */,
+				A43DACBA26EC7D1100C3583C /* FindMyFarmUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A43DAC9B26EC7D1000C3583C /* FindMyFarm */ = {
+			isa = PBXGroup;
+			children = (
+				A4C64EF226ED16FC008FCB6D /* FindMyFarm.entitlements */,
+				A43DACD026EC909300C3583C /* Helpers */,
+				A43DACCF26EC908300C3583C /* Models */,
+				A43DACCE26EC8F3800C3583C /* ViewControllers */,
+				A43DAC9C26EC7D1000C3583C /* AppDelegate.swift */,
+				A450FAEE26F4433000385B70 /* CarPlaySceneDelegate.swift */,
+				A43DAC9E26EC7D1000C3583C /* SceneDelegate.swift */,
+				A43DACA526EC7D1100C3583C /* Assets.xcassets */,
+				A43DACA726EC7D1100C3583C /* LaunchScreen.storyboard */,
+				A43DACAA26EC7D1100C3583C /* Info.plist */,
+				A450FAB026F435ED00385B70 /* Main.storyboard */,
+			);
+			path = FindMyFarm;
+			sourceTree = "<group>";
+		};
+		A43DACB226EC7D1100C3583C /* FindMyFarmTests */ = {
+			isa = PBXGroup;
+			children = (
+				A43DACB326EC7D1100C3583C /* FindMyFarmTests.swift */,
+				A43DACB526EC7D1100C3583C /* Info.plist */,
+			);
+			path = FindMyFarmTests;
+			sourceTree = "<group>";
+		};
+		A43DACBD26EC7D1100C3583C /* FindMyFarmUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A43DACBE26EC7D1100C3583C /* FindMyFarmUITests.swift */,
+				A43DACC026EC7D1100C3583C /* Info.plist */,
+			);
+			path = FindMyFarmUITests;
+			sourceTree = "<group>";
+		};
+		A43DACCE26EC8F3800C3583C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A435335426F58BE600DC2680 /* MainViewController.swift */,
+				A435335626F58C3600DC2680 /* MapViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A43DACCF26EC908300C3583C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A43DACD326EC90CD00C3583C /* FarmModel.swift */,
+				A43DACD526EC90E300C3583C /* Route.swift */,
+				A43DACD726EC911000C3583C /* RouteAnnotation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A43DACD026EC909300C3583C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A43DACD126EC90A500C3583C /* RouteBuilder.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A4C64EF326ED16FC008FCB6D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A4C64EF426ED16FC008FCB6D /* HomeKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A43DAC9826EC7D1000C3583C /* FindMyFarm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A43DACC326EC7D1100C3583C /* Build configuration list for PBXNativeTarget "FindMyFarm" */;
+			buildPhases = (
+				A43DAC9526EC7D1000C3583C /* Sources */,
+				A43DAC9626EC7D1000C3583C /* Frameworks */,
+				A43DAC9726EC7D1000C3583C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FindMyFarm;
+			productName = FindMyFarm;
+			productReference = A43DAC9926EC7D1000C3583C /* FindMyFarm.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A43DACAE26EC7D1100C3583C /* FindMyFarmTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A43DACC626EC7D1100C3583C /* Build configuration list for PBXNativeTarget "FindMyFarmTests" */;
+			buildPhases = (
+				A43DACAB26EC7D1100C3583C /* Sources */,
+				A43DACAC26EC7D1100C3583C /* Frameworks */,
+				A43DACAD26EC7D1100C3583C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A43DACB126EC7D1100C3583C /* PBXTargetDependency */,
+			);
+			name = FindMyFarmTests;
+			productName = FindMyFarmTests;
+			productReference = A43DACAF26EC7D1100C3583C /* FindMyFarmTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A43DACB926EC7D1100C3583C /* FindMyFarmUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A43DACC926EC7D1100C3583C /* Build configuration list for PBXNativeTarget "FindMyFarmUITests" */;
+			buildPhases = (
+				A43DACB626EC7D1100C3583C /* Sources */,
+				A43DACB726EC7D1100C3583C /* Frameworks */,
+				A43DACB826EC7D1100C3583C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A43DACBC26EC7D1100C3583C /* PBXTargetDependency */,
+			);
+			name = FindMyFarmUITests;
+			productName = FindMyFarmUITests;
+			productReference = A43DACBA26EC7D1100C3583C /* FindMyFarmUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A43DAC9126EC7D1000C3583C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					A43DAC9826EC7D1000C3583C = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					A43DACAE26EC7D1100C3583C = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = A43DAC9826EC7D1000C3583C;
+					};
+					A43DACB926EC7D1100C3583C = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = A43DAC9826EC7D1000C3583C;
+					};
+				};
+			};
+			buildConfigurationList = A43DAC9426EC7D1000C3583C /* Build configuration list for PBXProject "FindMyFarm" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A43DAC9026EC7D1000C3583C;
+			productRefGroup = A43DAC9A26EC7D1000C3583C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A43DAC9826EC7D1000C3583C /* FindMyFarm */,
+				A43DACAE26EC7D1100C3583C /* FindMyFarmTests */,
+				A43DACB926EC7D1100C3583C /* FindMyFarmUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A43DAC9726EC7D1000C3583C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A450FAB126F435ED00385B70 /* Main.storyboard in Resources */,
+				A43DACA926EC7D1100C3583C /* LaunchScreen.storyboard in Resources */,
+				A43DACA626EC7D1100C3583C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A43DACAD26EC7D1100C3583C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A43DACB826EC7D1100C3583C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A43DAC9526EC7D1000C3583C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A43DACD826EC911000C3583C /* RouteAnnotation.swift in Sources */,
+				A450FAEF26F4433000385B70 /* CarPlaySceneDelegate.swift in Sources */,
+				A435335726F58C3600DC2680 /* MapViewController.swift in Sources */,
+				A43DACD226EC90A500C3583C /* RouteBuilder.swift in Sources */,
+				A43DACD426EC90CD00C3583C /* FarmModel.swift in Sources */,
+				A43DAC9D26EC7D1000C3583C /* AppDelegate.swift in Sources */,
+				A435335526F58BE600DC2680 /* MainViewController.swift in Sources */,
+				A43DACD626EC90E300C3583C /* Route.swift in Sources */,
+				A43DAC9F26EC7D1000C3583C /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A43DACAB26EC7D1100C3583C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A43DACB426EC7D1100C3583C /* FindMyFarmTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A43DACB626EC7D1100C3583C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A43DACBF26EC7D1100C3583C /* FindMyFarmUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A43DACB126EC7D1100C3583C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A43DAC9826EC7D1000C3583C /* FindMyFarm */;
+			targetProxy = A43DACB026EC7D1100C3583C /* PBXContainerItemProxy */;
+		};
+		A43DACBC26EC7D1100C3583C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A43DAC9826EC7D1000C3583C /* FindMyFarm */;
+			targetProxy = A43DACBB26EC7D1100C3583C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A43DACA726EC7D1100C3583C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A43DACA826EC7D1100C3583C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A43DACC126EC7D1100C3583C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A43DACC226EC7D1100C3583C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A43DACC426EC7D1100C3583C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FindMyFarm/FindMyFarm.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 3P9AZUG9KY;
+				INFOPLIST_FILE = FindMyFarm/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.curiousbeagle.FindMyFarm;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = FindMyFarm;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A43DACC526EC7D1100C3583C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FindMyFarm/FindMyFarm.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 3P9AZUG9KY;
+				INFOPLIST_FILE = FindMyFarm/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.curiousbeagle.FindMyFarm;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = FindMyFarm;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A43DACC726EC7D1100C3583C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3P9AZUG9KY;
+				INFOPLIST_FILE = FindMyFarmTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.larryapps.FindMyFarmTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FindMyFarm.app/FindMyFarm";
+			};
+			name = Debug;
+		};
+		A43DACC826EC7D1100C3583C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3P9AZUG9KY;
+				INFOPLIST_FILE = FindMyFarmTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.larryapps.FindMyFarmTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FindMyFarm.app/FindMyFarm";
+			};
+			name = Release;
+		};
+		A43DACCA26EC7D1100C3583C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3P9AZUG9KY;
+				INFOPLIST_FILE = FindMyFarmUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.larryapps.FindMyFarmUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FindMyFarm;
+			};
+			name = Debug;
+		};
+		A43DACCB26EC7D1100C3583C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3P9AZUG9KY;
+				INFOPLIST_FILE = FindMyFarmUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.larryapps.FindMyFarmUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FindMyFarm;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A43DAC9426EC7D1000C3583C /* Build configuration list for PBXProject "FindMyFarm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A43DACC126EC7D1100C3583C /* Debug */,
+				A43DACC226EC7D1100C3583C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A43DACC326EC7D1100C3583C /* Build configuration list for PBXNativeTarget "FindMyFarm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A43DACC426EC7D1100C3583C /* Debug */,
+				A43DACC526EC7D1100C3583C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A43DACC626EC7D1100C3583C /* Build configuration list for PBXNativeTarget "FindMyFarmTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A43DACC726EC7D1100C3583C /* Debug */,
+				A43DACC826EC7D1100C3583C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A43DACC926EC7D1100C3583C /* Build configuration list for PBXNativeTarget "FindMyFarmUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A43DACCA26EC7D1100C3583C /* Debug */,
+				A43DACCB26EC7D1100C3583C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A43DAC9126EC7D1000C3583C /* Project object */;
+}
