@@ -36,7 +36,7 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
         let stops = [origin]
         let route = Route(origin: origin, stops: stops)
 
-//        window.rootViewController = MapRenderingViewController(route: route)
+        window.rootViewController = MapRenderingViewController(route: route)
         
         // Create a map template and set it as the root.
         let mapTemplate = self.makeMapTemplate()

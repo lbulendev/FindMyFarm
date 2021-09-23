@@ -19,6 +19,7 @@
 		A43DACD426EC90CD00C3583C /* FarmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43DACD326EC90CD00C3583C /* FarmModel.swift */; };
 		A43DACD626EC90E300C3583C /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43DACD526EC90E300C3583C /* Route.swift */; };
 		A43DACD826EC911000C3583C /* RouteAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43DACD726EC911000C3583C /* RouteAnnotation.swift */; };
+		A443AD6226FC0F23003B2DBC /* MapRenderingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A443AD6126FC0F23003B2DBC /* MapRenderingViewController.swift */; };
 		A450FAB126F435ED00385B70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A450FAB026F435ED00385B70 /* Main.storyboard */; };
 		A450FAEF26F4433000385B70 /* CarPlaySceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A450FAEE26F4433000385B70 /* CarPlaySceneDelegate.swift */; };
 		A4C64EF526ED16FC008FCB6D /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C64EF426ED16FC008FCB6D /* HomeKit.framework */; };
@@ -60,6 +61,7 @@
 		A43DACD326EC90CD00C3583C /* FarmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarmModel.swift; sourceTree = "<group>"; };
 		A43DACD526EC90E300C3583C /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		A43DACD726EC911000C3583C /* RouteAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteAnnotation.swift; sourceTree = "<group>"; };
+		A443AD6126FC0F23003B2DBC /* MapRenderingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRenderingViewController.swift; sourceTree = "<group>"; };
 		A450FAB026F435ED00385B70 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A450FAEE26F4433000385B70 /* CarPlaySceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlaySceneDelegate.swift; sourceTree = "<group>"; };
 		A4C64EF226ED16FC008FCB6D /* FindMyFarm.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FindMyFarm.entitlements; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			children = (
 				A435335426F58BE600DC2680 /* MainViewController.swift */,
 				A435335626F58C3600DC2680 /* MapViewController.swift */,
+				A443AD6126FC0F23003B2DBC /* MapRenderingViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 			files = (
 				A43DACD826EC911000C3583C /* RouteAnnotation.swift in Sources */,
 				A450FAEF26F4433000385B70 /* CarPlaySceneDelegate.swift in Sources */,
+				A443AD6226FC0F23003B2DBC /* MapRenderingViewController.swift in Sources */,
 				A435335726F58C3600DC2680 /* MapViewController.swift in Sources */,
 				A43DACD226EC90A500C3583C /* RouteBuilder.swift in Sources */,
 				A43DACD426EC90CD00C3583C /* FarmModel.swift in Sources */,
