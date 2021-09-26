@@ -10,9 +10,7 @@ import CoreLocation
 import MapKit
 
 class CarPlayMapViewController: UIViewController {
-    var initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
-    var model = FarmModel(name: "Blah", crop: "Blah", location: (0, 0))
-    private let route: Route? = nil
+    var route: Route? = nil
     private var mapRoutes: [MKRoute] = []
     private var groupedRoutes: [(startItem: MKMapItem, endItem: MKMapItem)] = []
     private var cManager = CarPlayManager()
@@ -56,7 +54,6 @@ class CarPlayMapViewController: UIViewController {
         view.addSubview(mapView)
         configureConstraints()
         print("**** cManager.locationManager?.location: \(cManager.locationManager?.location)")
-        print("**** initialLocation: \(initialLocation)")
     }
 
     private func groupAndRequestDirections() {
