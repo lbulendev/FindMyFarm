@@ -1,20 +1,21 @@
 //
-//  MapViewController.swift
+//  CarPlayMapViewController.swift
 //  FindMyFarm
 //
-//  Created by Larry Bulen on 9/17/21.
+//  Created by Larry Bulen on 9/23/21.
 //
 
 import UIKit
 import CoreLocation
 import MapKit
 
-class MapViewController: UIViewController {
+class CarPlayMapViewController: UIViewController {
     var initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
     var model = FarmModel(name: "Blah", crop: "Blah", location: (0, 0))
-    private let route: Route
+    private let route: Route? = nil
     private var mapRoutes: [MKRoute] = []
     private var groupedRoutes: [(startItem: MKMapItem, endItem: MKMapItem)] = []
+    private var cManager = CarPlayManager()
 
     lazy var mapView: MKMapView = {
         let mapView = MKMapView()
@@ -25,9 +26,12 @@ class MapViewController: UIViewController {
         return mapView
     }()
 
-    init(route: Route) {
-        self.route = route
+    required init() {
         super.init(nibName: nil, bundle: nil)
+    }
+
+    required override init(nibName: String?, bundle: Bundle?) {
+        fatalError("init(nibName: String?, bundle: Bundle?) has not been implemented")
     }
 
     required init?(coder: NSCoder) {
@@ -43,22 +47,21 @@ class MapViewController: UIViewController {
         ])
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.navigationBar.isHidden = false
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
-        mapView.showAnnotations(route.annotations, animated: false)
+        let emptyAnnotation: [MKAnnotation] = []
+        mapView.showAnnotations(route?.annotations ?? emptyAnnotation, animated: false)
         groupAndRequestDirections()
         view.addSubview(mapView)
         configureConstraints()
+        print("**** cManager.locationManager?.location: \(cManager.locationManager?.location)")
+        print("**** initialLocation: \(initialLocation)")
     }
 
     private func groupAndRequestDirections() {
-        guard let firstStop = route.stops.first else {
+        guard let route = route,
+              let firstStop = route.stops.first else {
             return
         }
         
@@ -140,7 +143,7 @@ class MapViewController: UIViewController {
     }
 }
 
-extension MapViewController: MKMapViewDelegate {
+extension CarPlayMapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
       let renderer = MKPolylineRenderer(overlay: overlay)
 

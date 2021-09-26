@@ -12,24 +12,25 @@ class MainViewController: UIViewController {
     private let locationManager = CLLocationManager()
     private var currentPlace: CLPlacemark?
     private var currentRegion: MKCoordinateRegion?
+    private var cManager = CarPlayManager()
 
     var farmList: [[FarmModel]] = [
         [
-            FarmModel(name: "Napa, CA", location: (38.2975, -122.2869)),
-            FarmModel(name: "Purdon, TX", location: (31.9490, -96.6167))
+            FarmModel(name: "Napa, CA", crop: "Grapes", location: (38.2975, -122.2869)),
+            FarmModel(name: "Purdon, TX", crop: "Grass", location: (31.9490, -96.6167))
         ],
         [
-            FarmModel(name: "Castello di Amorosa", location: (38.5586, -122.5428)),
-            FarmModel(name: "Stirling Winery", location: (40.6685, -74.4881))
+            FarmModel(name: "Castello di Amorosa", crop: "Grapes", location: (38.5586, -122.5428)),
+            FarmModel(name: "Stirling Winery", crop: "Grapes", location: (40.6685, -74.4881))
         ],
         [
-            FarmModel(name: "Baguio, PH", location: (16.4023, 120.5960)),
-            FarmModel(name: "Manila, PH", location: (14.5995, 120.9842))
+            FarmModel(name: "Baguio, PH", crop: "Strawberries", location: (16.4023, 120.5960)),
+            FarmModel(name: "Manila, PH", crop: "Coconuts", location: (14.5995, 120.9842))
         ],
         [
-            FarmModel(name: "Grand Canyon Village", location: (36.0544, -112.1401)),
-            FarmModel(name: "Yellowstone NP", location: (44.4280, -110.5885)),
-            FarmModel(name: "Yosemite NP", location: (37.8651, -119.5383))
+            FarmModel(name: "Grand Canyon Village", crop: "Grass", location: (36.0544, -112.1401)),
+            FarmModel(name: "Yellowstone NP", crop: "Grass", location: (44.4280, -110.5885)),
+            FarmModel(name: "Yosemite NP", crop: "Grass", location: (37.8651, -119.5383))
         ]
     ]
 
@@ -57,6 +58,7 @@ class MainViewController: UIViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
         view.backgroundColor = .orange
         attemptLocationAccess()
+        print("cManager.locationManager?.location: \(cManager.locationManager?.location)")
     }
 
     func attemptLocationAccess() {
