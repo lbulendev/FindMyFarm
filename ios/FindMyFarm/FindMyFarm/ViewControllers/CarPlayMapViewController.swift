@@ -53,7 +53,6 @@ class CarPlayMapViewController: UIViewController {
         groupAndRequestDirections()
         view.addSubview(mapView)
         configureConstraints()
-        print("**** cManager.locationManager?.location: \(cManager.locationManager?.location)")
     }
 
     private func groupAndRequestDirections() {
@@ -66,7 +65,7 @@ class CarPlayMapViewController: UIViewController {
         
         if route.stops.count == 2 {
             let secondStop = route.stops[1]
-            
+
             groupedRoutes.append((firstStop, secondStop))
             groupedRoutes.append((secondStop, route.origin))
         }
