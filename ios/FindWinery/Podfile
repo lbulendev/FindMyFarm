@@ -1,0 +1,9 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '14.0'
+
+target 'FindWinery' do
+  pod 'GoogleMaps', '~> 5.1'
+  pod 'GooglePlaces', '~> 5.0'
+end
+
+

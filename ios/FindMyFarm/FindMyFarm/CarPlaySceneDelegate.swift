@@ -77,15 +77,22 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
     }
 
     func makeRootTemplate() -> CPTemplate {
-        /*        let item = CPListItem.init(text: "Text", detailText: "Details")
-         //        let image = UIImage.init()
-         guard let image = UIImage(named: "FMF-map-pin") else { return  CPTemplate() }
-         let rowItem = CPListImageRowItem.init(text: "test", images: [image])
-         let section1 = CPListSection.init(items: [rowItem])
-         let section2 = CPListSection.init(items: [item])
-         let rootTemplate = CPListTemplate.init(title: "Farms", sections: [section1, section2])
-         return rootTemplate */
-        var section1Items: [CPListItem] = []
+        let item0 = CPListItem.init(text: farmList[0].name, detailText: farmList[0].crop)
+        let item1 = CPListItem.init(text: farmList[1].name, detailText: farmList[1].crop)
+        let item2 = CPListItem.init(text: farmList[2].name, detailText: farmList[2].crop)
+        let item3 = CPListItem.init(text: farmList[3].name, detailText: farmList[3].crop)
+        let item4 = CPListItem.init(text: farmList[4].name, detailText: farmList[4].crop)
+        let item5 = CPListItem.init(text: farmList[5].name, detailText: farmList[5].crop)
+        //        let image = UIImage.init()
+        guard let image = UIImage(named: "FMF-map-pin") else { return  CPTemplate() }
+        let rowItem = CPListImageRowItem.init(text: "section0, row0", images: [image])
+//        let section1 = CPListSection.init(items: [rowItem, item0, item1])
+        let section1 = CPListSection.init(items: [rowItem, item0, item1], header: "Header1", sectionIndexTitle: "headerIndexTitle")
+        let section2 = CPListSection.init(items: [item2, item3, item4, item5])
+        let rootTemplate = CPListTemplate.init(title: "Farms", sections: [section1, section2])
+        rootTemplate.delegate = self
+        return rootTemplate
+/*        var section1Items: [CPListItem] = []
         for farm in farmList {
             let farmItem = CPListItem(text: farm.name, detailText: farm.crop)
             section1Items.append(farmItem)
@@ -94,7 +101,7 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
         let rootTemplate = CPListTemplate.init(title: "Farms", sections: [section1])
         rootTemplate.delegate = self
         return rootTemplate
-    }
+*/    }
 
     func buildRoute(index: Int) {
         let segment: RouteBuilder.Segment?

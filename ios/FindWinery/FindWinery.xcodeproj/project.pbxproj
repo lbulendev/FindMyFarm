@@ -1,0 +1,743 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4D13BDA114DB79C8B076C382 /* libPods-FindWinery.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 749D9C1237FBDB7BD702D183 /* libPods-FindWinery.a */; };
+		A4FDB55F2701718600746282 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FDB55E2701718600746282 /* AppDelegate.swift */; };
+		A4FDB5612701718600746282 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FDB5602701718600746282 /* SceneDelegate.swift */; };
+		A4FDB5632701718600746282 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FDB5622701718600746282 /* ViewController.swift */; };
+		A4FDB5662701718600746282 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4FDB5642701718600746282 /* Main.storyboard */; };
+		A4FDB5682701718800746282 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4FDB5672701718800746282 /* Assets.xcassets */; };
+		A4FDB56B2701718800746282 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4FDB5692701718800746282 /* LaunchScreen.storyboard */; };
+		A4FDB5762701718800746282 /* FindWineryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FDB5752701718800746282 /* FindWineryTests.swift */; };
+		A4FDB5802701718800746282 /* FindWineryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FDB57F2701718800746282 /* FindWineryUITests.swift */; };
+		A4FDB5822701718800746282 /* FindWineryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FDB5812701718800746282 /* FindWineryUITestsLaunchTests.swift */; };
+		A4FDB59027017A2100746282 /* FarmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FDB58F27017A2100746282 /* FarmModel.swift */; };
+		A4FE01742702A6100045FA7A /* GoogleMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FE01732702A6100045FA7A /* GoogleMapViewController.swift */; };
+		A4FE01772702ABFB0045FA7A /* RouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FE01762702ABFB0045FA7A /* RouteBuilder.swift */; };
+		A4FE017A2702AC4D0045FA7A /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FE01792702AC4D0045FA7A /* Route.swift */; };
+		A4FE017C2702B0290045FA7A /* RouteAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FE017B2702B0290045FA7A /* RouteAnnotation.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A4FDB5722701718800746282 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A4FDB5532701718600746282 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A4FDB55A2701718600746282;
+			remoteInfo = FindWinery;
+		};
+		A4FDB57C2701718800746282 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A4FDB5532701718600746282 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A4FDB55A2701718600746282;
+			remoteInfo = FindWinery;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4E152651AD053FC9E2C252B1 /* Pods-FindWinery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindWinery.debug.xcconfig"; path = "Target Support Files/Pods-FindWinery/Pods-FindWinery.debug.xcconfig"; sourceTree = "<group>"; };
+		749D9C1237FBDB7BD702D183 /* libPods-FindWinery.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FindWinery.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4FDB55B2701718600746282 /* FindWinery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindWinery.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4FDB55E2701718600746282 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A4FDB5602701718600746282 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A4FDB5622701718600746282 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A4FDB5652701718600746282 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A4FDB5672701718800746282 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A4FDB56A2701718800746282 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A4FDB56C2701718800746282 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4FDB5712701718800746282 /* FindWineryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindWineryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4FDB5752701718800746282 /* FindWineryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindWineryTests.swift; sourceTree = "<group>"; };
+		A4FDB57B2701718800746282 /* FindWineryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindWineryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4FDB57F2701718800746282 /* FindWineryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindWineryUITests.swift; sourceTree = "<group>"; };
+		A4FDB5812701718800746282 /* FindWineryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindWineryUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A4FDB58F27017A2100746282 /* FarmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarmModel.swift; sourceTree = "<group>"; };
+		A4FE01732702A6100045FA7A /* GoogleMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapViewController.swift; sourceTree = "<group>"; };
+		A4FE01762702ABFB0045FA7A /* RouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteBuilder.swift; sourceTree = "<group>"; };
+		A4FE01792702AC4D0045FA7A /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		A4FE017B2702B0290045FA7A /* RouteAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteAnnotation.swift; sourceTree = "<group>"; };
+		D13C2C79462FA5CD5E4DEA3E /* Pods-FindWinery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindWinery.release.xcconfig"; path = "Target Support Files/Pods-FindWinery/Pods-FindWinery.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A4FDB5582701718600746282 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D13BDA114DB79C8B076C382 /* libPods-FindWinery.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4FDB56E2701718800746282 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4FDB5782701718800746282 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2A0238B5CB10B6423E1790FC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4E152651AD053FC9E2C252B1 /* Pods-FindWinery.debug.xcconfig */,
+				D13C2C79462FA5CD5E4DEA3E /* Pods-FindWinery.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9E261B80C2748A7A06D2F36E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				749D9C1237FBDB7BD702D183 /* libPods-FindWinery.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A4FDB5522701718600746282 = {
+			isa = PBXGroup;
+			children = (
+				A4FDB55D2701718600746282 /* FindWinery */,
+				A4FDB5742701718800746282 /* FindWineryTests */,
+				A4FDB57E2701718800746282 /* FindWineryUITests */,
+				A4FDB55C2701718600746282 /* Products */,
+				2A0238B5CB10B6423E1790FC /* Pods */,
+				9E261B80C2748A7A06D2F36E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A4FDB55C2701718600746282 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A4FDB55B2701718600746282 /* FindWinery.app */,
+				A4FDB5712701718800746282 /* FindWineryTests.xctest */,
+				A4FDB57B2701718800746282 /* FindWineryUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A4FDB55D2701718600746282 /* FindWinery */ = {
+			isa = PBXGroup;
+			children = (
+				A4FE01752702ABDB0045FA7A /* Helpers */,
+				A4FDB58E27017A0F00746282 /* Models */,
+				A4FE01722702A5EB0045FA7A /* ViewControllers */,
+				A4FDB55E2701718600746282 /* AppDelegate.swift */,
+				A4FDB5602701718600746282 /* SceneDelegate.swift */,
+				A4FDB5642701718600746282 /* Main.storyboard */,
+				A4FDB5672701718800746282 /* Assets.xcassets */,
+				A4FDB5692701718800746282 /* LaunchScreen.storyboard */,
+				A4FDB56C2701718800746282 /* Info.plist */,
+			);
+			path = FindWinery;
+			sourceTree = "<group>";
+		};
+		A4FDB5742701718800746282 /* FindWineryTests */ = {
+			isa = PBXGroup;
+			children = (
+				A4FDB5752701718800746282 /* FindWineryTests.swift */,
+			);
+			path = FindWineryTests;
+			sourceTree = "<group>";
+		};
+		A4FDB57E2701718800746282 /* FindWineryUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A4FDB57F2701718800746282 /* FindWineryUITests.swift */,
+				A4FDB5812701718800746282 /* FindWineryUITestsLaunchTests.swift */,
+			);
+			path = FindWineryUITests;
+			sourceTree = "<group>";
+		};
+		A4FDB58E27017A0F00746282 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A4FDB58F27017A2100746282 /* FarmModel.swift */,
+				A4FE01792702AC4D0045FA7A /* Route.swift */,
+				A4FE017B2702B0290045FA7A /* RouteAnnotation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A4FE01722702A5EB0045FA7A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A4FE01732702A6100045FA7A /* GoogleMapViewController.swift */,
+				A4FDB5622701718600746282 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A4FE01752702ABDB0045FA7A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A4FE01762702ABFB0045FA7A /* RouteBuilder.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A4FDB55A2701718600746282 /* FindWinery */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A4FDB5852701718800746282 /* Build configuration list for PBXNativeTarget "FindWinery" */;
+			buildPhases = (
+				76DF6CD1F3DB62AD6480B585 /* [CP] Check Pods Manifest.lock */,
+				A4FDB5572701718600746282 /* Sources */,
+				A4FDB5582701718600746282 /* Frameworks */,
+				A4FDB5592701718600746282 /* Resources */,
+				11B2B59CC97302E46E909116 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FindWinery;
+			productName = FindWinery;
+			productReference = A4FDB55B2701718600746282 /* FindWinery.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A4FDB5702701718800746282 /* FindWineryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A4FDB5882701718800746282 /* Build configuration list for PBXNativeTarget "FindWineryTests" */;
+			buildPhases = (
+				A4FDB56D2701718800746282 /* Sources */,
+				A4FDB56E2701718800746282 /* Frameworks */,
+				A4FDB56F2701718800746282 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A4FDB5732701718800746282 /* PBXTargetDependency */,
+			);
+			name = FindWineryTests;
+			productName = FindWineryTests;
+			productReference = A4FDB5712701718800746282 /* FindWineryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A4FDB57A2701718800746282 /* FindWineryUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A4FDB58B2701718800746282 /* Build configuration list for PBXNativeTarget "FindWineryUITests" */;
+			buildPhases = (
+				A4FDB5772701718800746282 /* Sources */,
+				A4FDB5782701718800746282 /* Frameworks */,
+				A4FDB5792701718800746282 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A4FDB57D2701718800746282 /* PBXTargetDependency */,
+			);
+			name = FindWineryUITests;
+			productName = FindWineryUITests;
+			productReference = A4FDB57B2701718800746282 /* FindWineryUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A4FDB5532701718600746282 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					A4FDB55A2701718600746282 = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					A4FDB5702701718800746282 = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = A4FDB55A2701718600746282;
+					};
+					A4FDB57A2701718800746282 = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = A4FDB55A2701718600746282;
+					};
+				};
+			};
+			buildConfigurationList = A4FDB5562701718600746282 /* Build configuration list for PBXProject "FindWinery" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A4FDB5522701718600746282;
+			productRefGroup = A4FDB55C2701718600746282 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A4FDB55A2701718600746282 /* FindWinery */,
+				A4FDB5702701718800746282 /* FindWineryTests */,
+				A4FDB57A2701718800746282 /* FindWineryUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A4FDB5592701718600746282 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4FDB56B2701718800746282 /* LaunchScreen.storyboard in Resources */,
+				A4FDB5682701718800746282 /* Assets.xcassets in Resources */,
+				A4FDB5662701718600746282 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4FDB56F2701718800746282 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4FDB5792701718800746282 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		11B2B59CC97302E46E909116 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FindWinery/Pods-FindWinery-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FindWinery/Pods-FindWinery-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FindWinery/Pods-FindWinery-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		76DF6CD1F3DB62AD6480B585 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FindWinery-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A4FDB5572701718600746282 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4FE01742702A6100045FA7A /* GoogleMapViewController.swift in Sources */,
+				A4FE01772702ABFB0045FA7A /* RouteBuilder.swift in Sources */,
+				A4FE017C2702B0290045FA7A /* RouteAnnotation.swift in Sources */,
+				A4FDB5632701718600746282 /* ViewController.swift in Sources */,
+				A4FDB59027017A2100746282 /* FarmModel.swift in Sources */,
+				A4FDB55F2701718600746282 /* AppDelegate.swift in Sources */,
+				A4FE017A2702AC4D0045FA7A /* Route.swift in Sources */,
+				A4FDB5612701718600746282 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4FDB56D2701718800746282 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4FDB5762701718800746282 /* FindWineryTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4FDB5772701718800746282 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4FDB5802701718800746282 /* FindWineryUITests.swift in Sources */,
+				A4FDB5822701718800746282 /* FindWineryUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A4FDB5732701718800746282 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A4FDB55A2701718600746282 /* FindWinery */;
+			targetProxy = A4FDB5722701718800746282 /* PBXContainerItemProxy */;
+		};
+		A4FDB57D2701718800746282 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A4FDB55A2701718600746282 /* FindWinery */;
+			targetProxy = A4FDB57C2701718800746282 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A4FDB5642701718600746282 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A4FDB5652701718600746282 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A4FDB5692701718800746282 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A4FDB56A2701718800746282 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A4FDB5832701718800746282 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A4FDB5842701718800746282 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A4FDB5862701718800746282 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E152651AD053FC9E2C252B1 /* Pods-FindWinery.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3P9AZUG9KY;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FindWinery/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.larryapps.FindWinery;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A4FDB5872701718800746282 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D13C2C79462FA5CD5E4DEA3E /* Pods-FindWinery.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3P9AZUG9KY;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FindWinery/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.larryapps.FindWinery;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A4FDB5892701718800746282 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3P9AZUG9KY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.larryapps.FindWineryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FindWinery.app/FindWinery";
+			};
+			name = Debug;
+		};
+		A4FDB58A2701718800746282 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3P9AZUG9KY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.larryapps.FindWineryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FindWinery.app/FindWinery";
+			};
+			name = Release;
+		};
+		A4FDB58C2701718800746282 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3P9AZUG9KY;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.larryapps.FindWineryUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FindWinery;
+			};
+			name = Debug;
+		};
+		A4FDB58D2701718800746282 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3P9AZUG9KY;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.larryapps.FindWineryUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FindWinery;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A4FDB5562701718600746282 /* Build configuration list for PBXProject "FindWinery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4FDB5832701718800746282 /* Debug */,
+				A4FDB5842701718800746282 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A4FDB5852701718800746282 /* Build configuration list for PBXNativeTarget "FindWinery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4FDB5862701718800746282 /* Debug */,
+				A4FDB5872701718800746282 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A4FDB5882701718800746282 /* Build configuration list for PBXNativeTarget "FindWineryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4FDB5892701718800746282 /* Debug */,
+				A4FDB58A2701718800746282 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A4FDB58B2701718800746282 /* Build configuration list for PBXNativeTarget "FindWineryUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4FDB58C2701718800746282 /* Debug */,
+				A4FDB58D2701718800746282 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A4FDB5532701718600746282 /* Project object */;
+}
