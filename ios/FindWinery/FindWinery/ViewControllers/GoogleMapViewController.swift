@@ -11,7 +11,7 @@ import GooglePlaces
 
 class GoogleMapViewController: UIViewController {
     var locationManager: CLLocationManager
-    var currentLocation: CLLocationCoordinate2D?
+    var destinationLocation: CLLocationCoordinate2D?
     var placesClient: GMSPlacesClient
     var preciseLocationZoomLevel: Float = 15.0
     var approximateLocationZoomLevel: Float = 10.0
@@ -25,8 +25,9 @@ class GoogleMapViewController: UIViewController {
         mapView.delegate = self
         return mapView
     }()
-    lazy var marker: GMSMarker = {
+    lazy var destinationMarker: GMSMarker = {
         let marker = GMSMarker()
+//        marker.icon = UIImage(named: "FW-map-pin")
         return marker
     }()
 
@@ -50,8 +51,14 @@ class GoogleMapViewController: UIViewController {
     }
     override func loadView() {
         super.loadView()
-        marker.map = mapView
-        guard let location = currentLocation else { return }
+        destinationMarker.map = mapView
+        guard let currentLocation = locationManager.location?.coordinate  else { return }
+        let myMarker = GMSMarker.init(position: currentLocation)
+        myMarker.icon = UIImage(named: "FW-map-pin")
+        myMarker.map = mapView
+        guard let location = destinationLocation else { return }
+        destinationMarker.position = location
+        destinationMarker.icon = UIImage(named: "FW-map-pin")
         mapView.camera = GMSCameraPosition.camera(withTarget: location, zoom: 6)
     }
 
@@ -72,20 +79,20 @@ class GoogleMapViewController: UIViewController {
 }
 
 extension GoogleMapViewController: GMSMapViewDelegate {
-    func mapView(_ mapView: GMSMapView, idleAt cameraPosition: GMSCameraPosition) {
-        geocoder.reverseGeocodeCoordinate(cameraPosition.target) { (response, error) in
-            guard error == nil else {
-                return
-            }
-            
-            if let result = response?.firstResult() {
-                let marker = GMSMarker()
-                marker.position = cameraPosition.target
-                marker.title = result.lines?[0]
-                marker.map = mapView
-            }
-        }
-    }
+//    func mapView(_ mapView: GMSMapView, idleAt cameraPosition: GMSCameraPosition) {
+//        geocoder.reverseGeocodeCoordinate(cameraPosition.target) { (response, error) in
+//            guard error == nil else {
+//                return
+//            }
+//
+//            if let result = response?.firstResult() {
+//                let marker = GMSMarker()
+//                marker.position = cameraPosition.target
+//                marker.title = result.lines?[0]
+//                marker.map = mapView
+//            }
+//        }
+//    }
 }
 
 // Delegates to handle events for the location manager.

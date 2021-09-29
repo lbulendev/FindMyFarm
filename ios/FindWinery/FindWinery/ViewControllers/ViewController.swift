@@ -142,7 +142,7 @@ extension ViewController: UITableViewDelegate {
         let location = CLLocationCoordinate2D(latitude: farmList[indexPath.section][indexPath.row].location?.0 ?? 0,
                                               longitude: farmList[indexPath.section][indexPath.row].location?.1 ?? 0)
         let mapVC = GoogleMapViewController(locationManager: locationManager, placesClient: placesClient)
-        mapVC.currentLocation = location
+        mapVC.destinationLocation = location
         self.navigationController?.pushViewController(mapVC, animated: true)
     }
 }
