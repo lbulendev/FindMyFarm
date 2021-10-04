@@ -6,33 +6,11 @@
 //
 
 import UIKit
+import CoreLocation
 import MapKit
 
 class MainViewController: UIViewController {
-    private let locationManager = CLLocationManager()
-    private var currentPlace: CLPlacemark?
-    private var currentRegion: MKCoordinateRegion?
-    private var cManager = CarPlayManager()
-
-    var farmList: [[FarmModel]] = [
-        [
-            FarmModel(name: "Napa, CA", crop: "Grapes", location: (38.2975, -122.2869)),
-            FarmModel(name: "Purdon, TX", crop: "Grass", location: (31.9490, -96.6167))
-        ],
-        [
-            FarmModel(name: "Castello di Amorosa", crop: "Grapes", location: (38.5586, -122.5428)),
-            FarmModel(name: "Stirling Winery", crop: "Grapes", location: (40.6685, -74.4881))
-        ],
-        [
-            FarmModel(name: "Baguio, PH", crop: "Strawberries", location: (16.4023, 120.5960)),
-            FarmModel(name: "Manila, PH", crop: "Coconuts", location: (14.5995, 120.9842))
-        ],
-        [
-            FarmModel(name: "Grand Canyon Village", crop: "Grass", location: (36.0544, -112.1401)),
-            FarmModel(name: "Yellowstone NP", crop: "Grass", location: (44.4280, -110.5885)),
-            FarmModel(name: "Yosemite NP", crop: "Grass", location: (37.8651, -119.5383))
-        ]
-    ]
+    private var carPlayManager = CarPlayManager()
 
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
@@ -57,20 +35,7 @@ class MainViewController: UIViewController {
         tableView.delegate = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
         view.backgroundColor = .orange
-        attemptLocationAccess()
-        print("cManager.locationManager?.location: \(cManager.locationManager?.location)")
-    }
-
-    func attemptLocationAccess() {
-        guard CLLocationManager.locationServicesEnabled() else { return }
-        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
-        locationManager.delegate = self
-        switch self.locationManager.authorizationStatus {
-        case .notDetermined:
-            locationManager.requestWhenInUseAuthorization()
-        default:
-            locationManager.requestLocation()
-        }
+        print("carPlayManager.locationManager?.location: \(carPlayManager.locationManager?.location)")
     }
 
     private func presentAlert(message: String) {
@@ -81,48 +46,23 @@ class MainViewController: UIViewController {
     }
 }
 
-extension MainViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager,
-                         didChangeAuthorization status: CLAuthorizationStatus) {
-        guard status == .authorizedWhenInUse else {
-            return
-        }
-        manager.requestLocation()
-    }
-
-    func locationManager(_ manager: CLLocationManager,
-                         didUpdateLocations locations: [CLLocation]) {
-        guard let firstLocation = locations.first else { return }
-        CLGeocoder().reverseGeocodeLocation(firstLocation) { places, _ in
-            guard let firstPlace = places?.first else { return }
-            self.currentPlace = firstPlace
-            print("currentPlace: \(self.currentPlace)")
-        }
-        let commonDelta: CLLocationDegrees = 25 / 111 // 1/111 = 1 latitude km
-        let span = MKCoordinateSpan(latitudeDelta: commonDelta, longitudeDelta: commonDelta)
-        let region = MKCoordinateRegion(center: firstLocation.coordinate, span: span)
-
-        currentRegion = region
-    }
-
-    func locationManager(_ manager: CLLocationManager,
-                         didFailWithError error: Swift.Error) {
-        print("error:: \(error)")
-    }
-}
-
 extension MainViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return farmList.count
+        return 1
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return farmList[section].count
+        return carPlayManager.dataManager?.farms.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell") else { return UITableViewCell() }
-        cell.textLabel?.text = "Farm: \(farmList[indexPath.section][indexPath.row].name ?? "no name"), (lat,long): (\(farmList[indexPath.section][indexPath.row].location?.0 ?? 0),\(farmList[indexPath.section][indexPath.row].location?.1 ?? 0))"
+        guard let farms = carPlayManager.dataManager?.farms else { return UITableViewCell() }
+        let farm = farms[indexPath.row]
+//        cell.textLabel?.text = farm.name
+//        cell.detailTextLabel?.text = "Crop: \(farm.crop), Size: \(farm.size)"
+        cell.textLabel?.numberOfLines = 0
+        cell.textLabel?.text = "Farm: \(farm.name ?? "no name") (lat,long): (\(farm.location?.0 ?? 0),\(farm.location?.1 ?? 0))\n Crop: \(farm.crop ?? "No Crop")\n Size: \(farm.size ?? "No size")"
         return cell
     }
     
@@ -132,14 +72,15 @@ extension MainViewController: UITableViewDataSource {
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let segment: RouteBuilder.Segment?
-        if let currentLocation = currentPlace?.location {
+        let farmList = carPlayManager.dataManager?.farms ?? []
+        if let currentLocation = carPlayManager.locationManager?.location {
           segment = .location(currentLocation)
         } else {
           segment = nil
         }
 
         let stopSegments: [RouteBuilder.Segment] = [
-            farmList[indexPath.section][indexPath.row].name
+            farmList[indexPath.row].name
         ]
         .compactMap { contents in
           if let value = contents {
@@ -160,7 +101,7 @@ extension MainViewController: UITableViewDelegate {
         RouteBuilder.buildRoute(
           origin: originSegment,
           stops: stopSegments,
-          within: currentRegion
+          within: carPlayManager.locationManager?.currentRegion
         ) { result in
 
           switch result {

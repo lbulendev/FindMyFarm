@@ -11,17 +11,9 @@ import CoreLocation
 class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
     var interfaceController: CPInterfaceController?
     var carWindow: CPWindow?
-    private let locationManager = CLLocationManager()
+    lazy var carPlayManager: CarPlayManager = CarPlayManager()
+    private var currentPlace: CLPlacemark?
     private var currentRegion: MKCoordinateRegion?
-
-    var farmList: [FarmModel] = [
-        FarmModel(name: "Napa, CA", crop: "Grapes", location: (38.2975, -122.2869)),
-        FarmModel(name: "Castello di Amorosa", crop: "Grapes", location: (38.5586, -122.5428)),
-        FarmModel(name: "Sterling Vineyards", crop: "Grapes", location: (38.5724076, -122.5552601)),
-        FarmModel(name: "Grand Canyon Village", crop: "Grass", location: (36.0544, -112.1401)),
-        FarmModel(name: "Yellowstone NP", crop: "Grass", location: (44.4280, -110.5885)),
-        FarmModel(name: "Yosemite NP", crop: "Pine trees", location: (37.8651, -119.5383))
-    ]
 
     func templateApplicationScene(_ templateApplicationScene: CPTemplateApplicationScene, didConnect interfaceController: CPInterfaceController, to window: CPWindow) {
         print("templateApplicationScene(, didConnect interfaceController:, to window:")
@@ -77,35 +69,26 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
     }
 
     func makeRootTemplate() -> CPTemplate {
-        let item0 = CPListItem.init(text: farmList[0].name, detailText: farmList[0].crop)
-        let item1 = CPListItem.init(text: farmList[1].name, detailText: farmList[1].crop)
-        let item2 = CPListItem.init(text: farmList[2].name, detailText: farmList[2].crop)
-        let item3 = CPListItem.init(text: farmList[3].name, detailText: farmList[3].crop)
-        let item4 = CPListItem.init(text: farmList[4].name, detailText: farmList[4].crop)
-        let item5 = CPListItem.init(text: farmList[5].name, detailText: farmList[5].crop)
-        //        let image = UIImage.init()
-        guard let image = UIImage(named: "FMF-map-pin") else { return  CPTemplate() }
-        let rowItem = CPListImageRowItem.init(text: "section0, row0", images: [image])
-//        let section1 = CPListSection.init(items: [rowItem, item0, item1])
-        let section1 = CPListSection.init(items: [rowItem, item0, item1], header: "Header1", sectionIndexTitle: "headerIndexTitle")
-        let section2 = CPListSection.init(items: [item2, item3, item4, item5])
-        let rootTemplate = CPListTemplate.init(title: "Farms", sections: [section1, section2])
-        rootTemplate.delegate = self
-        return rootTemplate
-/*        var section1Items: [CPListItem] = []
-        for farm in farmList {
-            let farmItem = CPListItem(text: farm.name, detailText: farm.crop)
-            section1Items.append(farmItem)
+        var itemArray: [CPListItem] = []
+        guard let farms = carPlayManager.dataManager?.farms else { return CPListTemplate.init(title: nil, sections: []) }
+        for farm in farms {
+            if let name = farm.name,
+               let size = farm.size,
+               let crop = farm.crop {
+            itemArray.append(CPListItem.init(text: name, detailText: "Crop: \(crop), Size: \(size)", image: farm.image))
+            }
         }
-        let section1 = CPListSection(items: section1Items)
-        let rootTemplate = CPListTemplate.init(title: "Farms", sections: [section1])
+        let section = CPListSection.init(items: itemArray, header: nil, sectionIndexTitle: nil)
+        let rootTemplate = CPListTemplate.init(title: nil, sections: [section])
+        carPlayManager.locationManager?.delegate = self
         rootTemplate.delegate = self
         return rootTemplate
-*/    }
+    }
 
     func buildRoute(index: Int) {
         let segment: RouteBuilder.Segment?
-        if let currentLocation = locationManager.location {
+        let farmList = carPlayManager.dataManager?.farms ?? []
+        if let currentLocation = carPlayManager.locationManager?.location {
             segment = .location(currentLocation)
         } else {
             segment = nil
@@ -165,8 +148,40 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
 extension CarPlaySceneDelegate: CPListTemplateDelegate {
     func listTemplate(_ listTemplate: CPListTemplate, didSelect item: CPListItem, completionHandler: @escaping () -> Void) {
         print("**** didSelect => name: \(item.text)")
+        let farmList = carPlayManager.dataManager?.farms ?? []
         if let index = farmList.firstIndex(where: { $0.name == item.text }) {
             buildRoute(index: index)
         }
     }
 }
+
+extension CarPlaySceneDelegate: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager,
+                         didChangeAuthorization status: CLAuthorizationStatus) {
+        guard status == .authorizedWhenInUse else {
+            return
+        }
+        manager.requestLocation()
+    }
+
+    func locationManager(_ manager: CLLocationManager,
+                         didUpdateLocations locations: [CLLocation]) {
+        guard let firstLocation = locations.first else { return }
+        CLGeocoder().reverseGeocodeLocation(firstLocation) { places, _ in
+            guard let firstPlace = places?.first else { return }
+            self.currentPlace = firstPlace
+            print("currentPlace: \(self.currentPlace)")
+        }
+        let commonDelta: CLLocationDegrees = 25 / 111 // 1/111 = 1 latitude km
+        let span = MKCoordinateSpan(latitudeDelta: commonDelta, longitudeDelta: commonDelta)
+        let region = MKCoordinateRegion(center: firstLocation.coordinate, span: span)
+
+        currentRegion = region
+    }
+
+    func locationManager(_ manager: CLLocationManager,
+                         didFailWithError error: Swift.Error) {
+        print("error:: \(error)")
+    }
+}
+

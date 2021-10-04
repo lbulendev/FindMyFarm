@@ -10,12 +10,12 @@ import GoogleMaps
 import GooglePlaces
 
 class GoogleMapViewController: UIViewController {
-    var locationManager: CLLocationManager
+    private var carPlayManager = CarPlayManager()
     var destinationLocation: CLLocationCoordinate2D?
+    let geocoder = GMSGeocoder()
     var placesClient: GMSPlacesClient
     var preciseLocationZoomLevel: Float = 15.0
     var approximateLocationZoomLevel: Float = 10.0
-    let geocoder = GMSGeocoder()
 
     lazy var mapView: GMSMapView = {
         let mapView = GMSMapView()
@@ -25,14 +25,14 @@ class GoogleMapViewController: UIViewController {
         mapView.delegate = self
         return mapView
     }()
+
     lazy var destinationMarker: GMSMarker = {
         let marker = GMSMarker()
 //        marker.icon = UIImage(named: "FW-map-pin")
         return marker
     }()
 
-    required init(locationManager: CLLocationManager, placesClient: GMSPlacesClient) {
-        self.locationManager = locationManager
+    required init(placesClient: GMSPlacesClient) {
         self.placesClient = placesClient
         super.init(nibName: nil, bundle: nil)
     }
@@ -49,10 +49,11 @@ class GoogleMapViewController: UIViewController {
             mapView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
+
     override func loadView() {
         super.loadView()
         destinationMarker.map = mapView
-        guard let currentLocation = locationManager.location?.coordinate  else { return }
+        guard let currentLocation = carPlayManager.locationManager?.location?.coordinate else { return }
         let myMarker = GMSMarker.init(position: currentLocation)
         myMarker.icon = UIImage(named: "FW-map-pin")
         myMarker.map = mapView
@@ -95,61 +96,3 @@ extension GoogleMapViewController: GMSMapViewDelegate {
 //    }
 }
 
-// Delegates to handle events for the location manager.
-extension GoogleMapViewController: CLLocationManagerDelegate {
-
-  // Handle incoming location events.
-  func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    let location: CLLocation = locations.last!
-    print("Location: \(location)")
-
-    let zoomLevel = locationManager.accuracyAuthorization == .fullAccuracy ? preciseLocationZoomLevel : approximateLocationZoomLevel
-    let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
-                                          longitude: location.coordinate.longitude,
-                                          zoom: zoomLevel)
-
-    if mapView.isHidden {
-      mapView.isHidden = false
-      mapView.camera = camera
-    } else {
-      mapView.animate(to: camera)
-    }
-  }
-
-  // Handle authorization for the location manager.
-  func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-    // Check accuracy authorization
-    let accuracy = manager.accuracyAuthorization
-    switch accuracy {
-    case .fullAccuracy:
-        print("Location accuracy is precise.")
-    case .reducedAccuracy:
-        print("Location accuracy is not precise.")
-    @unknown default:
-      fatalError()
-    }
-
-    // Handle authorization status
-    switch status {
-    case .restricted:
-      print("Location access was restricted.")
-    case .denied:
-      print("User denied access to location.")
-      // Display the map using the default location.
-      mapView.isHidden = false
-    case .notDetermined:
-      print("Location status not determined.")
-    case .authorizedAlways: fallthrough
-    case .authorizedWhenInUse:
-      print("Location status is OK.")
-    @unknown default:
-      fatalError()
-    }
-  }
-
-  // Handle location manager errors.
-  func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-    locationManager.stopUpdatingLocation()
-    print("Error: \(error)")
-  }
-}

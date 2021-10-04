@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A40EB28C270A094500339D3B /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40EB28B270A094500339D3B /* DataManager.swift */; };
 		A4208EB626FDB63100F4E411 /* CarPlayListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4208EB526FDB63100F4E411 /* CarPlayListViewController.swift */; };
 		A435335526F58BE600DC2680 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A435335426F58BE600DC2680 /* MainViewController.swift */; };
 		A435335726F58C3600DC2680 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A435335626F58C3600DC2680 /* MapViewController.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A40EB28B270A094500339D3B /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		A4208EB526FDB63100F4E411 /* CarPlayListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlayListViewController.swift; sourceTree = "<group>"; };
 		A435335426F58BE600DC2680 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A435335626F58C3600DC2680 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				A449721D26FD7AE20031B0B3 /* CarPlayManager.swift */,
+				A40EB28B270A094500339D3B /* DataManager.swift */,
 				A443E69D26FF889800CB9414 /* LocationManager.swift */,
 			);
 			path = Managers;
@@ -337,6 +340,7 @@
 				A43DACD826EC911000C3583C /* RouteAnnotation.swift in Sources */,
 				A450FAEF26F4433000385B70 /* CarPlaySceneDelegate.swift in Sources */,
 				A4208EB626FDB63100F4E411 /* CarPlayListViewController.swift in Sources */,
+				A40EB28C270A094500339D3B /* DataManager.swift in Sources */,
 				A435335726F58C3600DC2680 /* MapViewController.swift in Sources */,
 				A43DACD226EC90A500C3583C /* RouteBuilder.swift in Sources */,
 				A43DACD426EC90CD00C3583C /* FarmModel.swift in Sources */,

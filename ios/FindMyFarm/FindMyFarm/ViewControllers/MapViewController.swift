@@ -11,7 +11,7 @@ import MapKit
 
 class MapViewController: UIViewController {
     var initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
-    var model = FarmModel(name: "Blah", crop: "Blah", location: (0, 0))
+//    var model = FarmModel(name: "Blah", crop: "Blah", location: (0, 0))
     private let route: Route
     private var mapRoutes: [MKRoute] = []
     private var groupedRoutes: [(startItem: MKMapItem, endItem: MKMapItem)] = []

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4D13BDA114DB79C8B076C382 /* libPods-FindWinery.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 749D9C1237FBDB7BD702D183 /* libPods-FindWinery.a */; };
+		A429D5D4270A871900C5A4B7 /* CarPlayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A429D5D3270A871900C5A4B7 /* CarPlayManager.swift */; };
+		A429D5D6270A872A00C5A4B7 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A429D5D5270A872A00C5A4B7 /* DataManager.swift */; };
+		A429D5D8270A873D00C5A4B7 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A429D5D7270A873D00C5A4B7 /* LocationManager.swift */; };
 		A4FDB55F2701718600746282 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FDB55E2701718600746282 /* AppDelegate.swift */; };
 		A4FDB5612701718600746282 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FDB5602701718600746282 /* SceneDelegate.swift */; };
 		A4FDB5632701718600746282 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FDB5622701718600746282 /* ViewController.swift */; };
@@ -44,6 +47,9 @@
 /* Begin PBXFileReference section */
 		4E152651AD053FC9E2C252B1 /* Pods-FindWinery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindWinery.debug.xcconfig"; path = "Target Support Files/Pods-FindWinery/Pods-FindWinery.debug.xcconfig"; sourceTree = "<group>"; };
 		749D9C1237FBDB7BD702D183 /* libPods-FindWinery.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FindWinery.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A429D5D3270A871900C5A4B7 /* CarPlayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlayManager.swift; sourceTree = "<group>"; };
+		A429D5D5270A872A00C5A4B7 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		A429D5D7270A873D00C5A4B7 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		A4FDB55B2701718600746282 /* FindWinery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindWinery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4FDB55E2701718600746282 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4FDB5602701718600746282 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +114,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A429D5D2270A86F200C5A4B7 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				A429D5D3270A871900C5A4B7 /* CarPlayManager.swift */,
+				A429D5D5270A872A00C5A4B7 /* DataManager.swift */,
+				A429D5D7270A873D00C5A4B7 /* LocationManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		A4FDB5522701718600746282 = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				A4FE01752702ABDB0045FA7A /* Helpers */,
+				A429D5D2270A86F200C5A4B7 /* Managers */,
 				A4FDB58E27017A0F00746282 /* Models */,
 				A4FE01722702A5EB0045FA7A /* ViewControllers */,
 				A4FDB55E2701718600746282 /* AppDelegate.swift */,
@@ -366,12 +383,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4FE01742702A6100045FA7A /* GoogleMapViewController.swift in Sources */,
+				A429D5D6270A872A00C5A4B7 /* DataManager.swift in Sources */,
 				A4FE01772702ABFB0045FA7A /* RouteBuilder.swift in Sources */,
+				A429D5D8270A873D00C5A4B7 /* LocationManager.swift in Sources */,
 				A4FE017C2702B0290045FA7A /* RouteAnnotation.swift in Sources */,
 				A4FDB5632701718600746282 /* ViewController.swift in Sources */,
 				A4FDB59027017A2100746282 /* FarmModel.swift in Sources */,
 				A4FDB55F2701718600746282 /* AppDelegate.swift in Sources */,
 				A4FE017A2702AC4D0045FA7A /* Route.swift in Sources */,
+				A429D5D4270A871900C5A4B7 /* CarPlayManager.swift in Sources */,
 				A4FDB5612701718600746282 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

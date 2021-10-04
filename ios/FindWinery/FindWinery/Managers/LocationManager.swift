@@ -1,8 +1,8 @@
 //
 //  LocationManager.swift
-//  FindMyFarm
+//  FindWinery
 //
-//  Created by Larry Bulen on 9/25/21.
+//  Created by Larry Bulen on 10/3/21.
 //
 
 import Foundation
