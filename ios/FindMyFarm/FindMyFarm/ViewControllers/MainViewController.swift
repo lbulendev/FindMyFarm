@@ -6,14 +6,13 @@
 //
 
 import UIKit
-import CoreLocation
 import MapKit
 
 class MainViewController: UIViewController {
     private var carPlayManager = CarPlayManager()
 
     lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .grouped)
+        let tableView = UITableView(frame: .zero, style: .plain)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -29,20 +28,15 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .orange
         view.addSubview(tableView)
-        configureConstraints()
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
-        view.backgroundColor = .orange
-        print("carPlayManager.locationManager?.location: \(carPlayManager.locationManager?.location)")
-    }
-
-    private func presentAlert(message: String) {
-      let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-      alertController.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
-
-      present(alertController, animated: true)
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 150
+        tableView.register(FarmTableViewCell.self, forCellReuseIdentifier: FarmTableViewCell.reuseId)
+//        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
+        configureConstraints()
     }
 }
 
@@ -54,71 +48,56 @@ extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return carPlayManager.dataManager?.farms.count ?? 0
     }
-    
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell") else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: FarmTableViewCell.reuseId) as? FarmTableViewCell else { return FarmTableViewCell.init(style: .default, reuseIdentifier: FarmTableViewCell.reuseId) }
         guard let farms = carPlayManager.dataManager?.farms else { return UITableViewCell() }
         let farm = farms[indexPath.row]
-//        cell.textLabel?.text = farm.name
-//        cell.detailTextLabel?.text = "Crop: \(farm.crop), Size: \(farm.size)"
-        cell.textLabel?.numberOfLines = 0
-        cell.textLabel?.text = "Farm: \(farm.name ?? "no name") (lat,long): (\(farm.location?.0 ?? 0),\(farm.location?.1 ?? 0))\n Crop: \(farm.crop ?? "No Crop")\n Size: \(farm.size ?? "No size")"
+        cell.farmNameLabel.text = farm.name
+        cell.cropTypeLabel.text = farm.crop
+        let latitude = farm.location?.0 ?? 0
+        let longitude = farm.location?.1 ?? 0
+        var location = "(\(latitude), \(longitude))"
+        if longitude == 0 && latitude == 0 {
+            location = "--"
+        }
+        cell.locationCoordinatesLabel.text = location
+        let request = MKDirections.Request()
+        let startCoordinate = CLLocationCoordinate2D.init(latitude: carPlayManager.locationManager?.location?.coordinate.latitude ?? 0, longitude: carPlayManager.locationManager?.location?.coordinate.longitude ?? 0)
+        let startPlaceMark = MKPlacemark.init(coordinate: startCoordinate)
+        let startItem = MKMapItem.init(placemark: startPlaceMark)
+
+        let desitnationCoordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        let destinationPlaceMark = MKPlacemark.init(coordinate: desitnationCoordinate)
+        let destinationItem = MKMapItem.init(placemark: destinationPlaceMark)
+
+        request.source = startItem
+        request.destination = destinationItem
+        request.requestsAlternateRoutes = true
+        
+        let directions = MKDirections(request: request)
+        
+        directions.calculate { response, error in
+            guard let route = response?.routes.first else { return }
+            self.carPlayManager.dataManager?.farms[indexPath.row].routes = response?.routes
+            let hours = floor(route.expectedTravelTime / 60.0 / 60.0)
+            let minutes = floor(floor(route.expectedTravelTime - (hours * 60.0 * 60.0)) / 60.0)
+            let distance = route.distance / 1609.34
+            cell.distanceAmountLabel.text = "\(String(format:"%.2f", distance)) miles"
+            cell.timeAmountLabel.text = "\(String(format:"%.0f", hours)):\(String(format:"%.0f", minutes)) hours"
+        }
         return cell
     }
-    
-    
 }
 
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let segment: RouteBuilder.Segment?
-        let farmList = carPlayManager.dataManager?.farms ?? []
-        if let currentLocation = carPlayManager.locationManager?.location {
-          segment = .location(currentLocation)
-        } else {
-          segment = nil
-        }
-
-        let stopSegments: [RouteBuilder.Segment] = [
-            farmList[indexPath.row].name
-        ]
-        .compactMap { contents in
-          if let value = contents {
-            return .text(value)
-          } else {
-            return nil
-          }
-        }
-
-        guard
-          let originSegment = segment,
-          !stopSegments.isEmpty
-          else {
-            self.presentAlert(message: "Please select an origin and at least 1 stop.")
-            return
-        }
-
-        RouteBuilder.buildRoute(
-          origin: originSegment,
-          stops: stopSegments,
-          within: carPlayManager.locationManager?.currentRegion
-        ) { result in
-
-          switch result {
-          case .success(let route):
-            let mapVC = MapViewController(route: route)
-            self.navigationController?.pushViewController(mapVC, animated: true)
-
-          case .failure(let error):
-            let errorMessage: String
-
-            switch error {
-            case .invalidSegment(let reason):
-              errorMessage = "There was an error with: \(reason)."
-            }
-
-            self.presentAlert(message: errorMessage)
-          }
-        }
+        guard let farm = carPlayManager.dataManager?.farms[indexPath.row] else { return }
+        let farmVC = RouteSelectionViewController(farm: farm)
+        self.navigationController?.pushViewController(farmVC, animated: true)
     }
 }

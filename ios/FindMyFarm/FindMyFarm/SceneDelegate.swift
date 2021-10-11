@@ -6,7 +6,6 @@
 //
 
 import UIKit
-//import CarPlay
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 

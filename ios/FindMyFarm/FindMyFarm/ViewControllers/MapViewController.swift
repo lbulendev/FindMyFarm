@@ -10,8 +10,6 @@ import CoreLocation
 import MapKit
 
 class MapViewController: UIViewController {
-    var initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
-//    var model = FarmModel(name: "Blah", crop: "Blah", location: (0, 0))
     private let route: Route
     private var mapRoutes: [MKRoute] = []
     private var groupedRoutes: [(startItem: MKMapItem, endItem: MKMapItem)] = []
@@ -82,19 +80,29 @@ class MapViewController: UIViewController {
         
         request.source = nextGroup.startItem
         request.destination = nextGroup.endItem
+        request.requestsAlternateRoutes = true
         
         let directions = MKDirections(request: request)
         
         directions.calculate { response, error in
-            guard let mapRoute = response?.routes.first else { return }
+/*            guard let mapRoute = response?.routes.first else { return }
             
             self.updateView(with: mapRoute)
-            self.fetchNextRoute()
+            self.fetchNextRoute()*/
+            guard let routes = response?.routes else { return }
+            for route in routes {
+                let minutes = floor(route.expectedTravelTime / 60.0)
+                let seconds = round(route.expectedTravelTime - minutes * 60)
+                print("**** route: \(route.name); distance: \(route.distance / 1609.0) miles; time: \(minutes):\(seconds)")
+                self.updateView(with: route)
+                self.fetchNextRoute()
+            }
         }
     }
 
     private func updateView(with mapRoute: MKRoute) {
         let padding: CGFloat = 8
+
         mapView.addOverlay(mapRoute.polyline)
         mapView.setVisibleMapRect(
             mapView.visibleMapRect.union(
@@ -143,10 +151,8 @@ class MapViewController: UIViewController {
 extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
       let renderer = MKPolylineRenderer(overlay: overlay)
-
       renderer.strokeColor = .systemBlue
       renderer.lineWidth = 3
-
       return renderer
     }
 }

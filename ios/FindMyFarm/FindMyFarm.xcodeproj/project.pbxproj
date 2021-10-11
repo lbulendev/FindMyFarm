@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		A40EB28C270A094500339D3B /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40EB28B270A094500339D3B /* DataManager.swift */; };
 		A4208EB626FDB63100F4E411 /* CarPlayListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4208EB526FDB63100F4E411 /* CarPlayListViewController.swift */; };
+		A4224381271251010071A30B /* FarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4224380271251010071A30B /* FarmTableViewCell.swift */; };
+		A427F5ED2711F20600B8F2CA /* RouteSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A427F5EC2711F20600B8F2CA /* RouteSelectionViewController.swift */; };
+		A42C41C62713D3C100C627C2 /* TurnNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42C41C52713D3C100C627C2 /* TurnNavigationViewController.swift */; };
 		A435335526F58BE600DC2680 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A435335426F58BE600DC2680 /* MainViewController.swift */; };
 		A435335726F58C3600DC2680 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A435335626F58C3600DC2680 /* MapViewController.swift */; };
 		A43DAC9D26EC7D1000C3583C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43DAC9C26EC7D1000C3583C /* AppDelegate.swift */; };
@@ -49,6 +52,9 @@
 /* Begin PBXFileReference section */
 		A40EB28B270A094500339D3B /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		A4208EB526FDB63100F4E411 /* CarPlayListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlayListViewController.swift; sourceTree = "<group>"; };
+		A4224380271251010071A30B /* FarmTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarmTableViewCell.swift; sourceTree = "<group>"; };
+		A427F5EC2711F20600B8F2CA /* RouteSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteSelectionViewController.swift; sourceTree = "<group>"; };
+		A42C41C52713D3C100C627C2 /* TurnNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnNavigationViewController.swift; sourceTree = "<group>"; };
 		A435335426F58BE600DC2680 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A435335626F58C3600DC2680 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		A43DAC9926EC7D1000C3583C /* FindMyFarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindMyFarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +108,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A422437F271250D80071A30B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A4224380271251010071A30B /* FarmTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		A43DAC9026EC7D1000C3583C = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +145,7 @@
 				A449721C26FD7ABC0031B0B3 /* Managers */,
 				A43DACCF26EC908300C3583C /* Models */,
 				A43DACCE26EC8F3800C3583C /* ViewControllers */,
+				A422437F271250D80071A30B /* Views */,
 				A43DAC9C26EC7D1000C3583C /* AppDelegate.swift */,
 				A450FAEE26F4433000385B70 /* CarPlaySceneDelegate.swift */,
 				A43DAC9E26EC7D1000C3583C /* SceneDelegate.swift */,
@@ -167,6 +182,8 @@
 				A449721F26FD7E340031B0B3 /* CarPlayMapViewController.swift */,
 				A435335426F58BE600DC2680 /* MainViewController.swift */,
 				A435335626F58C3600DC2680 /* MapViewController.swift */,
+				A427F5EC2711F20600B8F2CA /* RouteSelectionViewController.swift */,
+				A42C41C52713D3C100C627C2 /* TurnNavigationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -347,10 +364,13 @@
 				A43DAC9D26EC7D1000C3583C /* AppDelegate.swift in Sources */,
 				A435335526F58BE600DC2680 /* MainViewController.swift in Sources */,
 				A43DACD626EC90E300C3583C /* Route.swift in Sources */,
+				A427F5ED2711F20600B8F2CA /* RouteSelectionViewController.swift in Sources */,
+				A4224381271251010071A30B /* FarmTableViewCell.swift in Sources */,
 				A443E69E26FF889800CB9414 /* LocationManager.swift in Sources */,
 				A43DAC9F26EC7D1000C3583C /* SceneDelegate.swift in Sources */,
 				A449722026FD7E340031B0B3 /* CarPlayMapViewController.swift in Sources */,
 				A449721E26FD7AE20031B0B3 /* CarPlayManager.swift in Sources */,
+				A42C41C62713D3C100C627C2 /* TurnNavigationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

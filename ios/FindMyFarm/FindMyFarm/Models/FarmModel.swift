@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MapKit
 
 class FarmModel {
     let crop: String?
@@ -13,12 +14,14 @@ class FarmModel {
     let location: (Double, Double)?
     let size: String?
     let image: UIImage?
+    var routes: [MKRoute]? = nil
 
-    init (name: String?, crop: String?, location: (Double, Double)?, size: String?, image: UIImage?) {
+    init (name: String?, crop: String?, location: (Double, Double)?, size: String?, image: UIImage?, routes: [MKRoute]?) {
         self.crop = crop
         self.name = name
         self.location = location
         self.size = size
         self.image = image
+        self.routes = routes
     }
 }
