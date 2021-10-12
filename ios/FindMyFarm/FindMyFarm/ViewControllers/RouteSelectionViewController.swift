@@ -148,7 +148,8 @@ extension RouteSelectionViewController: UITableViewDataSource {
 extension RouteSelectionViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let route = farm?.routes?[indexPath.row],
-              let turnVC = TurnNavigationViewController(route: route) else { return }
+              let farm = farm,
+              let turnVC = TurnNavigationViewController(farm: farm, route: route) else { return }
         self.navigationController?.pushViewController(turnVC, animated: true)
     }
 }
