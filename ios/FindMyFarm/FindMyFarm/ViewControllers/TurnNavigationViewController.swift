@@ -24,6 +24,30 @@ class TurnNavigationViewController: UIViewController {
         return mapView
     }()
 
+    lazy var distanceLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .white
+        label.backgroundColor = .blue
+        label.numberOfLines = 0
+        return label
+    }()
+
+    lazy var instructionsLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .white
+        label.backgroundColor = .blue
+        label.numberOfLines = 0
+        return label
+    }()
+
+    lazy var noticeLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .white
+        label.backgroundColor = .red
+        label.numberOfLines = 0
+        return label
+    }()
+
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -37,6 +61,20 @@ class TurnNavigationViewController: UIViewController {
             mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             mapView.bottomAnchor.constraint(equalTo: tableView.topAnchor),
             mapView.heightAnchor.constraint(equalToConstant: view.frame.size.height * 0.50),
+            noticeLabel.topAnchor.constraint(equalTo: mapView.topAnchor),
+            noticeLabel.leadingAnchor.constraint(equalTo: mapView.leadingAnchor),
+            noticeLabel.trailingAnchor.constraint(equalTo: mapView.trailingAnchor),
+            noticeLabel.heightAnchor.constraint(equalToConstant: 20.0),
+            instructionsLabel.bottomAnchor.constraint(equalTo: mapView.bottomAnchor),
+            instructionsLabel.leadingAnchor.constraint(equalTo: mapView.leadingAnchor),
+            instructionsLabel.heightAnchor.constraint(equalToConstant: 20.0),
+            instructionsLabel.widthAnchor.constraint(equalToConstant: mapView.frame.size.width * 0.6),
+            instructionsLabel.bottomAnchor.constraint(equalTo: mapView.bottomAnchor),
+
+            distanceLabel.trailingAnchor.constraint(equalTo: mapView.trailingAnchor),
+            distanceLabel.heightAnchor.constraint(equalToConstant: 20.0),
+            distanceLabel.widthAnchor.constraint(equalToConstant: mapView.frame.size.width * 0.35),
+            distanceLabel.bottomAnchor.constraint(equalTo: mapView.bottomAnchor),
 
             tableView.topAnchor.constraint(equalTo: mapView.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -55,6 +93,9 @@ class TurnNavigationViewController: UIViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
         view.addSubview(mapView)
         view.addSubview(tableView)
+        view.addSubview(distanceLabel)
+        view.addSubview(instructionsLabel)
+        view.addSubview(noticeLabel)
 
         configureConstraints()
         getDirections()
@@ -76,14 +117,14 @@ class TurnNavigationViewController: UIViewController {
         // Source
         let sourceLat = carPlayManager.locationManager?.currentPlace?.location?.coordinate.latitude ?? +37.33213110
         let sourceLong = carPlayManager.locationManager?.currentPlace?.location?.coordinate.longitude ?? -122.02990105
-        let sourceCoordinate = CLLocationCoordinate2D.init(
-            latitude: sourceLat,
-            longitude: sourceLong)
+        let sourceCoordinate = CLLocationCoordinate2D.init(latitude: sourceLat,
+                                                           longitude: sourceLong)
         let sourcePlaceMark = MKPlacemark(coordinate: sourceCoordinate)
 //        let sourcePlaceMark = MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 39.058, longitude: -100.21))
         request.source = MKMapItem(placemark: sourcePlaceMark)
         // Destination
-        let destCoordinate = CLLocationCoordinate2D.init(latitude: farm?.location?.0 ?? 0, longitude: farm?.location?.1 ?? 0)
+        let destCoordinate = CLLocationCoordinate2D.init(latitude: farm?.location?.0 ?? 0,
+                                                         longitude: farm?.location?.1 ?? 0)
         let destPlaceMark = MKPlacemark(coordinate: destCoordinate)
 //        let destPlaceMark = MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 36.79, longitude: -98.64))
         request.destination = MKMapItem(placemark: destPlaceMark)
@@ -110,15 +151,16 @@ class TurnNavigationViewController: UIViewController {
         if currentStepIndex >= currentRoute.steps.count { return }
         let step = currentRoute.steps[currentStepIndex]
 
-//        instructionsLabel.text = step.instructions
+        instructionsLabel.text = step.instructions
 //        distanceLabel.text = "\(distanceConverter(distance: step.distance))"
+        distanceLabel.text = "\(step.distance) meters"
 
         // Hide the noticeLabel if notice doesn't exist
         if step.notice != nil {
-//            noticeLabel.isHidden = false
-//            noticeLabel.text = step.notice
+            noticeLabel.isHidden = false
+            noticeLabel.text = step.notice
         } else {
-//            noticeLabel.isHidden = true
+            noticeLabel.isHidden = true
         }
 
         // Enable/Disable buttons according to the step they are

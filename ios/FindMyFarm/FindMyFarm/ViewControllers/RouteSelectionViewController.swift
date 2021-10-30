@@ -88,12 +88,10 @@ class RouteSelectionViewController: UIViewController {
             mapView.visibleMapRect.union(
                 mapRoute.polyline.boundingMapRect
             ),
-            edgePadding: UIEdgeInsets(
-                top: 0,
-                left: padding,
-                bottom: padding,
-                right: padding
-            ),
+            edgePadding: UIEdgeInsets(top: 0,
+                                      left: padding,
+                                      bottom: padding,
+                                      right: padding),
             animated: true
         )
         mapRoutes.append(mapRoute)
@@ -120,10 +118,9 @@ extension RouteSelectionViewController: MKMapViewDelegate {
 private extension MKMapView {
   func centerToLocation(_ location: CLLocation,
                         regionRadius: CLLocationDistance = 1000) {
-    let coordinateRegion = MKCoordinateRegion(
-        center: location.coordinate,
-        latitudinalMeters: regionRadius,
-        longitudinalMeters: regionRadius)
+    let coordinateRegion = MKCoordinateRegion(center: location.coordinate,
+                                              latitudinalMeters: regionRadius,
+                                              longitudinalMeters: regionRadius)
     setRegion(coordinateRegion, animated: true)
   }
 }
@@ -136,10 +133,7 @@ extension RouteSelectionViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell") else { return UITableViewCell() }
         let route = farm?.routes?[indexPath.row]
-        let hours = floor((route?.expectedTravelTime ?? 0) / 60.0 / 60.0)
-        let minutes = floor(floor((route?.expectedTravelTime ?? 0) - (hours * 60.0 * 60.0)) / 60.0)
-        let distance = (route?.distance ?? 0) / 1609.34
-        cell.textLabel?.text = "\(route?.name ?? ""); \(String(format:"%.2f", distance)) miles; \(String(format:"%.0f", hours)):\(String(format:"%.0f", minutes))"
+        cell.textLabel?.text = "\(route?.distance.distance() ?? "0"); \(route?.expectedTravelTime.timeToTravel() ?? "0:00")"
         return cell
     }
     

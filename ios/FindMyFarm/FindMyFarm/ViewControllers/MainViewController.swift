@@ -71,8 +71,8 @@ extension MainViewController: UITableViewDataSource {
         let startPlaceMark = MKPlacemark.init(coordinate: startCoordinate)
         let startItem = MKMapItem.init(placemark: startPlaceMark)
 
-        let desitnationCoordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        let destinationPlaceMark = MKPlacemark.init(coordinate: desitnationCoordinate)
+        let destinationCoordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        let destinationPlaceMark = MKPlacemark.init(coordinate: destinationCoordinate)
         let destinationItem = MKMapItem.init(placemark: destinationPlaceMark)
 
         request.source = startItem
@@ -84,11 +84,8 @@ extension MainViewController: UITableViewDataSource {
         directions.calculate { response, error in
             guard let route = response?.routes.first else { return }
             self.carPlayManager.dataManager?.farms[indexPath.row].routes = response?.routes
-            let hours = floor(route.expectedTravelTime / 60.0 / 60.0)
-            let minutes = floor(floor(route.expectedTravelTime - (hours * 60.0 * 60.0)) / 60.0)
-            let distance = route.distance / 1609.34
-            cell.distanceAmountLabel.text = "\(String(format:"%.2f", distance)) miles"
-            cell.timeAmountLabel.text = "\(String(format:"%.0f", hours)):\(String(format:"%.0f", minutes)) hours"
+            cell.distanceAmountLabel.text = route.distance.distance()
+            cell.timeAmountLabel.text = route.expectedTravelTime.timeToTravel()
         }
         return cell
     }
