@@ -8,23 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		4D13BDA114DB79C8B076C382 /* libPods-FindWinery.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 749D9C1237FBDB7BD702D183 /* libPods-FindWinery.a */; };
-		A429D5D4270A871900C5A4B7 /* CarPlayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A429D5D3270A871900C5A4B7 /* CarPlayManager.swift */; };
 		A429D5D6270A872A00C5A4B7 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A429D5D5270A872A00C5A4B7 /* DataManager.swift */; };
 		A429D5D8270A873D00C5A4B7 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A429D5D7270A873D00C5A4B7 /* LocationManager.swift */; };
+		A453DF38280C4FBD0037A887 /* CarPlayTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453DF37280C4FBD0037A887 /* CarPlayTemplates.swift */; };
+		A453DF3B280C4FEE0037A887 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453DF39280C4FEE0037A887 /* MapViewController.swift */; };
+		A453DF3C280C4FEE0037A887 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453DF3A280C4FEE0037A887 /* MainViewController.swift */; };
+		A453DF3E280C50440037A887 /* WineryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453DF3D280C50440037A887 /* WineryModel.swift */; };
+		A453DF40280C52620037A887 /* TemplateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453DF3F280C52620037A887 /* TemplateManager.swift */; };
+		A453DF42280C63560037A887 /* CarPlaySceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453DF41280C63560037A887 /* CarPlaySceneDelegate.swift */; };
 		A4FDB55F2701718600746282 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FDB55E2701718600746282 /* AppDelegate.swift */; };
 		A4FDB5612701718600746282 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FDB5602701718600746282 /* SceneDelegate.swift */; };
-		A4FDB5632701718600746282 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FDB5622701718600746282 /* ViewController.swift */; };
 		A4FDB5662701718600746282 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4FDB5642701718600746282 /* Main.storyboard */; };
 		A4FDB5682701718800746282 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4FDB5672701718800746282 /* Assets.xcassets */; };
 		A4FDB56B2701718800746282 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4FDB5692701718800746282 /* LaunchScreen.storyboard */; };
 		A4FDB5762701718800746282 /* FindWineryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FDB5752701718800746282 /* FindWineryTests.swift */; };
 		A4FDB5802701718800746282 /* FindWineryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FDB57F2701718800746282 /* FindWineryUITests.swift */; };
 		A4FDB5822701718800746282 /* FindWineryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FDB5812701718800746282 /* FindWineryUITestsLaunchTests.swift */; };
-		A4FDB59027017A2100746282 /* FarmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FDB58F27017A2100746282 /* FarmModel.swift */; };
-		A4FE01742702A6100045FA7A /* GoogleMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FE01732702A6100045FA7A /* GoogleMapViewController.swift */; };
-		A4FE01772702ABFB0045FA7A /* RouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FE01762702ABFB0045FA7A /* RouteBuilder.swift */; };
-		A4FE017A2702AC4D0045FA7A /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FE01792702AC4D0045FA7A /* Route.swift */; };
-		A4FE017C2702B0290045FA7A /* RouteAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FE017B2702B0290045FA7A /* RouteAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,13 +46,18 @@
 /* Begin PBXFileReference section */
 		4E152651AD053FC9E2C252B1 /* Pods-FindWinery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindWinery.debug.xcconfig"; path = "Target Support Files/Pods-FindWinery/Pods-FindWinery.debug.xcconfig"; sourceTree = "<group>"; };
 		749D9C1237FBDB7BD702D183 /* libPods-FindWinery.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FindWinery.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A429D5D3270A871900C5A4B7 /* CarPlayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlayManager.swift; sourceTree = "<group>"; };
 		A429D5D5270A872A00C5A4B7 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		A429D5D7270A873D00C5A4B7 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		A453DF35280C4DA30037A887 /* FindWinery.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = FindWinery.entitlements; sourceTree = "<group>"; };
+		A453DF37280C4FBD0037A887 /* CarPlayTemplates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarPlayTemplates.swift; sourceTree = "<group>"; };
+		A453DF39280C4FEE0037A887 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		A453DF3A280C4FEE0037A887 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		A453DF3D280C50440037A887 /* WineryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WineryModel.swift; sourceTree = "<group>"; };
+		A453DF3F280C52620037A887 /* TemplateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateManager.swift; sourceTree = "<group>"; };
+		A453DF41280C63560037A887 /* CarPlaySceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarPlaySceneDelegate.swift; sourceTree = "<group>"; };
 		A4FDB55B2701718600746282 /* FindWinery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindWinery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4FDB55E2701718600746282 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4FDB5602701718600746282 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A4FDB5622701718600746282 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A4FDB5652701718600746282 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A4FDB5672701718800746282 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4FDB56A2701718800746282 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -63,11 +67,6 @@
 		A4FDB57B2701718800746282 /* FindWineryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindWineryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4FDB57F2701718800746282 /* FindWineryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindWineryUITests.swift; sourceTree = "<group>"; };
 		A4FDB5812701718800746282 /* FindWineryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindWineryUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		A4FDB58F27017A2100746282 /* FarmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarmModel.swift; sourceTree = "<group>"; };
-		A4FE01732702A6100045FA7A /* GoogleMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapViewController.swift; sourceTree = "<group>"; };
-		A4FE01762702ABFB0045FA7A /* RouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteBuilder.swift; sourceTree = "<group>"; };
-		A4FE01792702AC4D0045FA7A /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
-		A4FE017B2702B0290045FA7A /* RouteAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteAnnotation.swift; sourceTree = "<group>"; };
 		D13C2C79462FA5CD5E4DEA3E /* Pods-FindWinery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindWinery.release.xcconfig"; path = "Target Support Files/Pods-FindWinery/Pods-FindWinery.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,12 +116,21 @@
 		A429D5D2270A86F200C5A4B7 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				A429D5D3270A871900C5A4B7 /* CarPlayManager.swift */,
 				A429D5D5270A872A00C5A4B7 /* DataManager.swift */,
 				A429D5D7270A873D00C5A4B7 /* LocationManager.swift */,
+				A453DF3F280C52620037A887 /* TemplateManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
+		};
+		A453DF36280C4FBD0037A887 /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				A453DF37280C4FBD0037A887 /* CarPlayTemplates.swift */,
+			);
+			name = Templates;
+			path = FindWinery/Templates;
+			sourceTree = SOURCE_ROOT;
 		};
 		A4FDB5522701718600746282 = {
 			isa = PBXGroup;
@@ -149,11 +157,14 @@
 		A4FDB55D2701718600746282 /* FindWinery */ = {
 			isa = PBXGroup;
 			children = (
+				A453DF35280C4DA30037A887 /* FindWinery.entitlements */,
 				A4FE01752702ABDB0045FA7A /* Helpers */,
 				A429D5D2270A86F200C5A4B7 /* Managers */,
 				A4FDB58E27017A0F00746282 /* Models */,
+				A453DF36280C4FBD0037A887 /* Templates */,
 				A4FE01722702A5EB0045FA7A /* ViewControllers */,
 				A4FDB55E2701718600746282 /* AppDelegate.swift */,
+				A453DF41280C63560037A887 /* CarPlaySceneDelegate.swift */,
 				A4FDB5602701718600746282 /* SceneDelegate.swift */,
 				A4FDB5642701718600746282 /* Main.storyboard */,
 				A4FDB5672701718800746282 /* Assets.xcassets */,
@@ -183,9 +194,7 @@
 		A4FDB58E27017A0F00746282 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A4FDB58F27017A2100746282 /* FarmModel.swift */,
-				A4FE01792702AC4D0045FA7A /* Route.swift */,
-				A4FE017B2702B0290045FA7A /* RouteAnnotation.swift */,
+				A453DF3D280C50440037A887 /* WineryModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -193,8 +202,8 @@
 		A4FE01722702A5EB0045FA7A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				A4FE01732702A6100045FA7A /* GoogleMapViewController.swift */,
-				A4FDB5622701718600746282 /* ViewController.swift */,
+				A453DF3A280C4FEE0037A887 /* MainViewController.swift */,
+				A453DF39280C4FEE0037A887 /* MapViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -202,7 +211,6 @@
 		A4FE01752702ABDB0045FA7A /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				A4FE01762702ABFB0045FA7A /* RouteBuilder.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -218,7 +226,6 @@
 				A4FDB5572701718600746282 /* Sources */,
 				A4FDB5582701718600746282 /* Frameworks */,
 				A4FDB5592701718600746282 /* Resources */,
-				11B2B59CC97302E46E909116 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -336,23 +343,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		11B2B59CC97302E46E909116 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FindWinery/Pods-FindWinery-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FindWinery/Pods-FindWinery-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FindWinery/Pods-FindWinery-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		76DF6CD1F3DB62AD6480B585 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -382,17 +372,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4FE01742702A6100045FA7A /* GoogleMapViewController.swift in Sources */,
 				A429D5D6270A872A00C5A4B7 /* DataManager.swift in Sources */,
-				A4FE01772702ABFB0045FA7A /* RouteBuilder.swift in Sources */,
 				A429D5D8270A873D00C5A4B7 /* LocationManager.swift in Sources */,
-				A4FE017C2702B0290045FA7A /* RouteAnnotation.swift in Sources */,
-				A4FDB5632701718600746282 /* ViewController.swift in Sources */,
-				A4FDB59027017A2100746282 /* FarmModel.swift in Sources */,
+				A453DF3B280C4FEE0037A887 /* MapViewController.swift in Sources */,
+				A453DF40280C52620037A887 /* TemplateManager.swift in Sources */,
+				A453DF3C280C4FEE0037A887 /* MainViewController.swift in Sources */,
 				A4FDB55F2701718600746282 /* AppDelegate.swift in Sources */,
-				A4FE017A2702AC4D0045FA7A /* Route.swift in Sources */,
-				A429D5D4270A871900C5A4B7 /* CarPlayManager.swift in Sources */,
+				A453DF38280C4FBD0037A887 /* CarPlayTemplates.swift in Sources */,
+				A453DF42280C63560037A887 /* CarPlaySceneDelegate.swift in Sources */,
 				A4FDB5612701718600746282 /* SceneDelegate.swift in Sources */,
+				A453DF3E280C50440037A887 /* WineryModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,6 +559,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FindWinery/FindWinery.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3P9AZUG9KY;
@@ -599,6 +589,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FindWinery/FindWinery.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3P9AZUG9KY;

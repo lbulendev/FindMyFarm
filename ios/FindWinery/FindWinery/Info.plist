@@ -8,6 +8,17 @@
 		<false/>
 		<key>UISceneConfigurations</key>
 		<dict>
+            <key>CPTemplateApplicationSceneSessionRoleApplication</key>
+            <array>
+                <dict>
+                    <key>UISceneClassName</key>
+                    <string>CPTemplateApplicationScene</string>
+                    <key>UISceneConfigurationName</key>
+                    <string>CarPlay Configuration</string>
+                    <key>UISceneDelegateClassName</key>
+                    <string>${PRODUCT_MODULE_NAME}.CarPlaySceneDelegate</string>
+                </dict>
+            </array>
 			<key>UIWindowSceneSessionRoleApplication</key>
 			<array>
 				<dict>
@@ -21,7 +32,7 @@
 			</array>
 		</dict>
 	</dict>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>Used to autofill the start/end location.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Used to autofill the start/end location.</string>
 </dict>
 </plist>
