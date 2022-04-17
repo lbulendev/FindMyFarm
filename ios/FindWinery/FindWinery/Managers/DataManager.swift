@@ -8,6 +8,8 @@
 import Foundation
 
 class DataManager: NSObject {
+    static let shared = DataManager()
+
     let wineries: [WineryModel] = [
         WineryModel(name: "Castello di Amorosa",
                   location: (38.5586, -122.5428),

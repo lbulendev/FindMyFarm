@@ -19,6 +19,7 @@ class MapViewController: UIViewController {
 //        mapView.showsUserLocation = true
         return mapView
     }()
+    var wineries = DataManager.shared.wineries
 
     required init() {
         super.init(nibName: nil, bundle: nil)
@@ -44,9 +45,16 @@ class MapViewController: UIViewController {
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-//        mapView.delegate = self
+        mapView.delegate = self
         view.addSubview(mapView)
         configureConstraints()
+
+        for winery in wineries {
+            let annotation = MKPointAnnotation.init()
+            annotation.coordinate = CLLocationCoordinate2D(latitude: winery.location?.0 ?? 0, longitude: winery.location?.1 ?? 0)
+            annotation.title = winery.name
+            mapView.addAnnotation(annotation)
+        }
     }
 
     // MARK: MapView Actions
@@ -84,3 +92,7 @@ class MapViewController: UIViewController {
         }
     }
 }
+
+extension MapViewController: MKMapViewDelegate {
+}
+
