@@ -1,0 +1,16 @@
+{
+  "images" : [
+    {
+      "filename" : "cpZoomIn.pdf",
+      "idiom" : "universal"
+    },
+    {
+      "filename" : "cpZoomIn-1.pdf",
+      "idiom" : "car"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

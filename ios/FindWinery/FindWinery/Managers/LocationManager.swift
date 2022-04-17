@@ -10,19 +10,49 @@ import CoreLocation
 import MapKit
 
 class LocationManager: CLLocationManager {
+    static let instance: LocationManager = LocationManager()
+
     var currentPlace: CLPlacemark?
     var currentRegion: MKCoordinateRegion?
-    private let locationManager = CLLocationManager()
+
+    fileprivate let manager = CLLocationManager()
+    fileprivate var localizationAlreadyRequested: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: "localizationAlreadyRequested")
+        }
+        set(requested) {
+            UserDefaults.standard.set(requested, forKey: "localizationAlreadyRequested")
+        }
+    }
 
     override public init() {
         super.init()
-        locationManager.delegate = self
+        manager.delegate = self
 
         requestWhenInUseAuthorization()
 
         /*        if Bundle.main.backgroundModes.contains("location") {
             allowsBackgroundLocationUpdates = true
         }*/
+    }
+
+    func authorized(forceAlert: Bool = true, completion: (() -> Void)?) {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedWhenInUse, .authorizedAlways:
+            if let completion = completion {
+                completion()
+            }
+        case .notDetermined:
+            if forceAlert || !localizationAlreadyRequested {
+                self.manager.requestWhenInUseAuthorization()
+            }
+        case .restricted, .denied:
+            if forceAlert {
+                self.manager.requestWhenInUseAuthorization()
+            }
+        @unknown default:
+            break
+        }
     }
 }
 

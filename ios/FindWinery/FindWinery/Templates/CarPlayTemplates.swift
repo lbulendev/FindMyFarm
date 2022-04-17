@@ -20,16 +20,14 @@ extension CPMapTemplate {
         }
         zoomInButton.isHidden = false
         zoomInButton.isEnabled = true
-//        zoomInButton.image = ImageItems.cpZoomIn
-        //        zoomInButton.image = UIImage(named: "ZoomIn", in: Bundle.main, compatibleWith: traitCollection)
+        zoomInButton.image = UIImage(named: "cpZoomIn", in: Bundle.main, compatibleWith: traitCollection)
         
         let zoomOutButton = CPMapButton { _ in
             zoomOutAction()
         }
         zoomOutButton.isHidden = false
         zoomOutButton.isEnabled = true
-//        zoomOutButton.image = ImageItems.cpZoomOut
-        //        zoomOutButton.image = UIImage(named: "ZoomOut", in: Bundle.main, compatibleWith: traitCollection)
+        zoomOutButton.image = UIImage(named: "cpZoomOut", in: Bundle.main, compatibleWith: traitCollection)
         
         mapTemplate.mapButtons = [zoomInButton, zoomOutButton]
         mapTemplate.automaticallyHidesNavigationBar = false

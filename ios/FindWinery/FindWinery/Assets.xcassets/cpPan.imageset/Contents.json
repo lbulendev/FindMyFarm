@@ -1,0 +1,16 @@
+{
+  "images" : [
+    {
+      "filename" : "cpPan.pdf",
+      "idiom" : "universal"
+    },
+    {
+      "filename" : "cpPan-1.pdf",
+      "idiom" : "car"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

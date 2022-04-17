@@ -1,0 +1,16 @@
+{
+  "images" : [
+    {
+      "filename" : "cpZoomOut.pdf",
+      "idiom" : "universal"
+    },
+    {
+      "filename" : "cpZoomOut-1.pdf",
+      "idiom" : "car"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
