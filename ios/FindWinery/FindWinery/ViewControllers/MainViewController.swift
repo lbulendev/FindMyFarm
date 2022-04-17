@@ -29,6 +29,7 @@ class MainViewController: UIViewController {
         return tableView
     }()
 
+    var annotations: [MKPointAnnotation] = []
     var wineries = DataManager.shared.wineries
     let cellIdentifier = "UITableViewCell"
 
@@ -68,6 +69,11 @@ class MainViewController: UIViewController {
         tableView.dataSource = self
         configureConstraints()
     }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        mapView.showAnnotations(annotations, animated: true)
+    }
 }
 
 extension MainViewController: MKMapViewDelegate {
@@ -87,7 +93,7 @@ extension MainViewController: UITableViewDataSource {
         let annotation = MKPointAnnotation.init()
         annotation.coordinate = CLLocationCoordinate2D(latitude: wineLocation.0, longitude: wineLocation.1)
         annotation.title = wineries[indexPath.row].name
-        mapView.addAnnotation(annotation)
+        annotations.append(annotation)
         cell.detailTextLabel?.text = "(\(wineLocation.0), \(wineLocation.1))"
         return cell
     }

@@ -35,7 +35,7 @@ class MapViewController: UIViewController {
 
     func configureConstraints() {
         NSLayoutConstraint.activate([
-            mapView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            mapView.topAnchor.constraint(equalTo: view.topAnchor),
             mapView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             mapView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
@@ -48,13 +48,15 @@ class MapViewController: UIViewController {
         mapView.delegate = self
         view.addSubview(mapView)
         configureConstraints()
+        var annotations: [MKPointAnnotation] = []
 
         for winery in wineries {
             let annotation = MKPointAnnotation.init()
             annotation.coordinate = CLLocationCoordinate2D(latitude: winery.location?.0 ?? 0, longitude: winery.location?.1 ?? 0)
             annotation.title = winery.name
-            mapView.addAnnotation(annotation)
+            annotations.append(annotation)
         }
+        mapView.showAnnotations(annotations, animated: true)
     }
 
     // MARK: MapView Actions
